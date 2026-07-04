@@ -1,0 +1,14 @@
+{
+  "name": "employee-task-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full stack employee task management system assignment using React, Node.js, Express, and MySQL.",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "npm run start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
