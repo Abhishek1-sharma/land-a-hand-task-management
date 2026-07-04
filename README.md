@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Employee Task Management System
 
 Full stack assignment project for Lend A Hand India. The application helps an admin manage employees, assign tasks, track due dates, update progress, and review dashboard metrics.
@@ -271,3 +272,6 @@ Recommended demo recording order:
 ```text
 Assignment Submission - Assignment Submission - <Candidate Name>
 ```
+=======
+# land-a-hand-task-management
+>>>>>>> 47584479f2c2817bcae5f2c5acace2c51a911544
