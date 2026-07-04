@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Employee Task Management System
 
 Full stack assignment project for Lend A Hand India. The application helps an admin manage employees, assign tasks, track due dates, update progress, and review dashboard metrics.
@@ -216,62 +217,3 @@ Protected routes require:
 ```text
 Authorization: Bearer <token>
 ```
-
-## Architecture
-
-See [docs/architecture.md](docs/architecture.md).
-
-## Demo Video Flow
-
-Recommended demo recording order:
-
-1. Show project folder structure and README.
-2. Show MySQL database tables and seed data.
-3. Start backend and show health check.
-4. Start frontend and login.
-5. Register a new employee account.
-6. Add, sort, search, and paginate employees as Admin.
-7. Create a task with start date, due date, assigned employee, and attachment.
-8. Filter/search tasks.
-9. Login as Employee and show only assigned tasks.
-10. Update task status to Completed.
-11. Show notifications and reports.
-12. Show email notification queue logs.
-13. Export CSV and Excel reports.
-14. Show responsive layout by resizing the browser.
-
-## Assignment Checklist
-
-- React frontend: Completed
-- Node.js + Express backend: Completed
-- MySQL database: Completed
-- Registration, login, Remember Me, logout: Completed
-- Admin and Employee role views: Completed
-- Database script: `database/schema.sql`
-- Flow / architecture diagram: `docs/architecture.md`
-- README setup instructions: Completed
-- Validation and error handling: Completed
-- Clean project structure: Completed
-- Responsive UI: Completed
-- Notifications: Completed
-- Email notification queue: Completed
-- File upload validation: Completed
-- CSV and Excel report export: Completed
-- Unit tests: Completed
-- Docker setup: Completed
-- Source code ready for GitHub: Completed
-- Short demo video: To be recorded before submission
-
-## Submission Notes
-
-- Do not commit `node_modules`, `dist`, or `.env`.
-- Push the repository to GitHub.
-- Add `hemant350` as a collaborator before submitting.
-- Email subject format:
-
-```text
-Assignment Submission - Assignment Submission - <Candidate Name>
-```
-=======
-# land-a-hand-task-management
->>>>>>> 47584479f2c2817bcae5f2c5acace2c51a911544
