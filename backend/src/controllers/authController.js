@@ -5,19 +5,28 @@ import { pool } from "../config/db.js";
 import { HttpError } from "../utils/httpError.js";
 
 async function verifyPassword(password, storedHash) {
+  if (!storedHash || typeof storedHash !== "string") return false;
+
   if (storedHash.startsWith("sha256:")) {
     const expected = storedHash.slice("sha256:".length);
     const actual = crypto.createHash("sha256").update(password).digest("hex");
+    if (expected.length !== actual.length) return false;
     return crypto.timingSafeEqual(Buffer.from(actual), Buffer.from(expected));
   }
 
-  return bcrypt.compare(password, storedHash);
+  if (storedHash.startsWith("$2a$") || storedHash.startsWith("$2b$")) {
+    return bcrypt.compare(password, storedHash);
+  }
+
+  if (password.length !== storedHash.length) return false;
+  return crypto.timingSafeEqual(Buffer.from(password), Buffer.from(storedHash));
 }
 
 export async function login(req, res) {
-  const { email, password, rememberMe } = req.body;
+  const { password, rememberMe } = req.body;
+  const email = req.body.email.trim().toLowerCase();
   const [rows] = await pool.execute(
-    "SELECT id, name, email, password_hash AS passwordHash, role, employee_id AS employeeId FROM users WHERE email = :email LIMIT 1",
+    "SELECT id, name, email, password_hash AS passwordHash, role, employee_id AS employeeId FROM users WHERE LOWER(email) = :email LIMIT 1",
     { email }
   );
 
